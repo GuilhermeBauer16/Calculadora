@@ -1,2 +1,2 @@
-# Calculadora-
-Uma calculadora , capaz de realizar as operações matemáticas : + - / X 
+# Calculadora
+Uma calculadora , capaz de realizar as operações matemáticas( + - / X )
