@@ -1,6 +1,10 @@
 # Calculadora
 Uma calculadora , capaz de realizar as operações matemáticas( + - / X )
 
+## Linguagem ultilizada: 
+
+<img width= 80 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" />
+          
 ## Funcionalidades:
 
 * Com essa calculadora você pode realizar as seguintes operações matemáticas ( + - ÷ x ).
