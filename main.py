@@ -5,8 +5,8 @@ janela.title("Calculadora")
 janela.config(padx= 2, pady= 2 , background='#AAA')
 janela.resizable(False, False)
 primeiro_numero = 0
-segundo_numero = 0
 operacao = ""
+
 
 entrada = Entry(janela, 
                width=15 , 
@@ -26,7 +26,7 @@ entrada.grid(
 )
 #funções 
 def click_btn(numero):
-     entrada.delete(0 ,END)
+     # entrada.delete(0 ,END)
      numero = int(numero)
      entrada.insert(END ,numero)
 
@@ -36,6 +36,11 @@ def definir_operacao(op):
      operacao = op
      primeiro_numero = int(entrada.get())
      entrada.delete( 0 , END)
+
+def tecla_precionada(event):
+     tecla = event.char
+     if tecla.isdigit():
+          click_btn(int(tecla))
 
 
 def calcular():
@@ -64,25 +69,43 @@ def apaga():
      entrada.delete(0 , END)
 
 
-def cria_btn(aparece,texto,espacox,espacoy,fundo,fonte,click,commando,style):
-
+def cria_btn(aparece,texto,espacox,espacoy,fundo,cor_fonte,cor_click,comando,style):
+     """
+     aparece = onde ou em qual "janela" o resultado ira aparecer;
+     texto = o texto que ira aparecer no botão;
+     espacox = o pad em relação ao eixo X;
+     espacoy = o pad em relação ao eixo Y;
+     fundo = a cor de fundo do seu botão;
+     cor_fonte = a cor da fonte;
+     cor_click = a cor do botão quando houver o click;
+     comando = o comando ou a função que voçê quiser atribuir ;
+     style = o estilo da borda do botão;
+     """
      botao = Button(aparece,
                     text=texto,
                     font=('fontana', 12 , 'bold'),
                     padx=espacox ,
                     pady=espacoy ,
                     bg= fundo, 
-                    fg= fonte,
-                    activebackground= click,
-                    command= commando,
+                    fg= cor_fonte,
+                    activebackground= cor_click,
+                    command= comando,
                     relief= style)
      
      return botao
 
 def cria_grid(variavel,coluna,linha , espacox=0,espacoy=5, espaco=1):
+     '''
+     variavel = o nome da variavel do botão descrito acima;
+     coluna = em qual coluna sera posicionado o botão;
+     linha = em qual linha sera posicionado o botão;
+     espacox = o pad em relação ao eixo X;
+     espacoy = o pad em relação ao eixo Y;
+     espaco = o tanto de linhas que haverá em relação aos outros botões;
+     '''
      variavel.grid(row= coluna,column= linha , padx= espacox , pady= espacoy ,columnspan= espaco)
 
-
+janela.bind('<Key>', tecla_precionada)
 um = cria_btn(janela,"1",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:click_btn(1), FLAT)
 cria_grid(um,1 ,0,0,5)
 
@@ -130,6 +153,5 @@ cria_grid(vezes,4 ,2,0,5,2)
 
 igual = cria_btn(janela,"=",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:calcular(), FLAT)
 cria_grid(igual,4 ,3,0,5,2)
-
 
 janela.mainloop()
