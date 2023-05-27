@@ -12,3 +12,7 @@ Uma calculadora , capaz de realizar as operações matemáticas( + - / X )
 * Também possue botão de apagar (C).
 
 * Posibilidade de ultilizar os números do teclado em vez clicar na tela.
+
+## Exemplo de funcionamento:
+
+![image](https://github.com/GuilhermeBauer16/Calculadora/assets/123701893/76f961e9-ce27-4d19-9862-4118cd3786e9)
