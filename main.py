@@ -1,31 +1,12 @@
 from tkinter import *
-#funções 
-def click_btn(numero):
-     entrada.delete(0 ,END)
-     entrada.insert(END ,numero)
-
-def dividir():
-     global primeiro_numero
-     primeiro_numero = int(entrada.get())
-     entrada.delete( 0 , END)
-
-
-def calcular():
-     segundo_numero = int(entrada.get())
-     resultado = primeiro_numero / segundo_numero
-     entrada.delete(0 , END)
-     entrada.insert( 0 , resultado)
-
-
-def apaga():
-     entrada.delete(0 , END)
-
 
 janela = Tk()
 janela.title("Calculadora")
 janela.config(padx= 2, pady= 2 , background='#AAA')
 janela.resizable(False, False)
 primeiro_numero = 0
+segundo_numero = 0
+operacao = ""
 
 entrada = Entry(janela, 
                width=15 , 
@@ -43,6 +24,45 @@ entrada.grid(
     pady= 6,
     padx= 10
 )
+#funções 
+def click_btn(numero):
+     entrada.delete(0 ,END)
+     numero = int(numero)
+     entrada.insert(END ,numero)
+
+def definir_operacao(op):
+     global primeiro_numero
+     global operacao
+     operacao = op
+     primeiro_numero = int(entrada.get())
+     entrada.delete( 0 , END)
+
+
+def calcular():
+
+     global primeiro_numero
+     segundo_numero = int(entrada.get())
+
+     if operacao == "*" :
+          resultado = primeiro_numero * segundo_numero
+          
+     if operacao ==  '/':
+          resultado = primeiro_numero / segundo_numero
+
+     if operacao == '+':
+          resultado = primeiro_numero + segundo_numero
+
+     if operacao  == '-':
+          resultado = primeiro_numero - segundo_numero
+
+     entrada.delete(0 , END)
+     entrada.insert(0 , str(resultado))
+     primeiro_numero = 0
+
+
+def apaga():
+     entrada.delete(0 , END)
+
 
 def cria_btn(aparece,texto,espacox,espacoy,fundo,fonte,click,commando,style):
 
@@ -96,20 +116,20 @@ cria_grid(zero,4 ,0,0,5, 2)
 apagar = cria_btn(janela,"C",30 , 20 ,'#FFDB58',"#000000",'#FFA500',lambda:apaga(), FLAT)
 cria_grid(apagar,0 ,4,0,5,2)
 
-mais = cria_btn(janela,"+",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:click_btn('+'), FLAT)
+mais = cria_btn(janela,"+",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:definir_operacao('+'), FLAT)
 cria_grid(mais,1 ,3,0,5,2)
 
-menos = cria_btn(janela,"-",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:click_btn('-'), FLAT)
+menos = cria_btn(janela,"-",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:definir_operacao('-'), FLAT)
 cria_grid(menos,2 ,3,0,5,2)
 
-divide = cria_btn(janela,"÷",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:dividir(), FLAT)
+divide = cria_btn(janela,"÷",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:definir_operacao('/'), FLAT)
 cria_grid(divide,3 ,3,0,5,2)
+
+vezes = cria_btn(janela,"X",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:definir_operacao('*'), FLAT)
+cria_grid(vezes,4 ,2,0,5,2)
 
 igual = cria_btn(janela,"=",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:calcular(), FLAT)
 cria_grid(igual,4 ,3,0,5,2)
-
-vezes = cria_btn(janela,"X",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:click_btn("X"), FLAT)
-cria_grid(vezes,4 ,2,0,5,2)
 
 
 janela.mainloop()
