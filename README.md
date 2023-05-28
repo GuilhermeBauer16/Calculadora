@@ -1,5 +1,5 @@
 # Calculadora
-Com essa calculadora você pode realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
+Uma calculadora , capaz de realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
 
 ## Linguagem ultilizada: 
 
