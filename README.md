@@ -1,5 +1,5 @@
 # Calculadora
-Uma calculadora , capaz de realizar as operações matemáticas( + - / X )
+Uma calculadora , capaz de realizar as seguintes operações matemáticas( + - ÷ x )
 
 ## Linguagem ultilizada: 
 
