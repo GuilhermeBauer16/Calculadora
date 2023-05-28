@@ -1,30 +1,26 @@
 # Calculadora
-Uma calculadora , capaz de realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
+Uma calculadora, capaz de realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
 
-## Linguagem ultilizada: 
+## Linguagem utilizada: 
 
-<img width= 80 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" />
+<img width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" />
           
 ## Funcionalidades:
 
-* Com essa calculadora você pode realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
+* Com essa calculadora, você pode realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
 
-* Também possue botão de apagar (C).
+* Também possui um botão de apagar (C).
 
-* Posibilidade de ultilizar os números do teclado em vez  ao click na tela.
+* Possibilidade de utilizar os números do teclado em vez de clicar na tela.
 
-* posibilidade de realizar contas de % (porcentagem);
+* Possibilidade de realizar contas de % (porcentagem);
 
-* posibilidade de realizar contas de ^ (potência); 
+* Possibilidade de realizar contas de ^ (potência); 
 
-* posibilidade de realizar contas de √ (raiz quadrada)
+* Possibilidade de realizar contas de √ (raiz quadrada)
 
-* posibilidadede realizara contas com . ;
+* Possibilidade de realizar contas com . ;
 
 ## Exemplo de funcionamento:
-          
-  ![image](https://github.com/GuilhermeBauer16/Calculadora/assets/123701893/76f961e9-ce27-4d19-9862-4118cd3786e9)
-     
-  https://github.com/GuilhermeBauer16/Calculadora/assets/123701893/559d607b-2e09-46e4-a916-84f0e87ee5d7
 
-      
+  https://github.com/GuilhermeBauer16/Calculadora/assets/123701893/88b2ade7-1954-47f8-81b5-b55fec23d5b5
