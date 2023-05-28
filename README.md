@@ -1,5 +1,5 @@
 # Calculadora
-Uma calculadora , capaz de realizar as seguintes operações matemáticas( + - ÷ x )
+Com essa calculadora você pode realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
 
 ## Linguagem ultilizada: 
 
@@ -7,11 +7,19 @@ Uma calculadora , capaz de realizar as seguintes operações matemáticas( + - �
           
 ## Funcionalidades:
 
-* Com essa calculadora você pode realizar as seguintes operações matemáticas ( + - ÷ x ).
+* Com essa calculadora você pode realizar as seguintes operações matemáticas ( + - ÷ x √ % ^ . ).
 
 * Também possue botão de apagar (C).
 
-* Posibilidade de ultilizar os números do teclado em vez clicar na tela.
+* Posibilidade de ultilizar os números do teclado em vez  ao click na tela.
+
+* posibilidade de realizar contas de % (porcentagem);
+
+* posibilidade de realizar contas de ^ (potência); 
+
+* posibilidade de realizar contas de √ (raiz quadrada)
+
+* posibilidadede realizara contas com . ;
 
 ## Exemplo de funcionamento:
           
