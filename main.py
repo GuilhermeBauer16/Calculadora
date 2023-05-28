@@ -26,9 +26,10 @@ entrada.grid(
 )
 #funções 
 def click_btn(numero):
-     # entrada.delete(0 ,END)
+
      numero = int(numero)
      entrada.insert(END ,numero)
+ 
 
 def definir_operacao(op):
      global primeiro_numero
