@@ -25,6 +25,16 @@ entrada.grid(
     padx= 10
 )
 #funções 
+
+def calcula_raiz_quadrada():
+     numero = float(entrada.get())
+     resultado =numero ** 0.5
+     entrada.delete(0,END)
+     entrada.insert(0, str(f'{resultado:.2f}'))
+
+
+
+
 def click_btn(numero):
 
      numero = int(numero)
@@ -35,7 +45,7 @@ def definir_operacao(op):
      global primeiro_numero
      global operacao
      operacao = op
-     primeiro_numero = int(entrada.get())
+     primeiro_numero = float(entrada.get())
      entrada.delete( 0 , END)
 
 def tecla_precionada(event):
@@ -47,7 +57,7 @@ def tecla_precionada(event):
 def calcular():
 
      global primeiro_numero
-     segundo_numero = int(entrada.get())
+     segundo_numero = float(entrada.get())
 
      if operacao == "*" :
           resultado = primeiro_numero * segundo_numero
@@ -61,9 +71,20 @@ def calcular():
      if operacao  == '-':
           resultado = primeiro_numero - segundo_numero
 
+     if operacao == '**':
+          resultado = primeiro_numero ** segundo_numero
+
+     if operacao == '%':
+          resultado = (primeiro_numero / segundo_numero  ) * 100
+
      entrada.delete(0 , END)
-     entrada.insert(0 , str(resultado))
+     entrada.insert(0 , str(f'{resultado:.2f}'))
      primeiro_numero = 0
+
+def add_ponto():
+     valorAtual = entrada.get()
+     if '.' not in valorAtual:
+          entrada.insert(END,'.')
 
 
 def apaga():
@@ -153,6 +174,17 @@ vezes = cria_btn(janela,"X",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:defini
 cria_grid(vezes,4 ,2,0,5,2)
 
 igual = cria_btn(janela,"=",30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda:calcular(), FLAT)
-cria_grid(igual,4 ,3,0,5,2)
+cria_grid(igual,4 ,3,0,5 ,2 )
 
+potencia = cria_btn(janela , '^' , 30 , 30 ,'#FFDB58',"#000000",'#FFA500' , lambda: definir_operacao('**'), FLAT)
+cria_grid(potencia, 5 , 0 , 0 , 5, )
+
+raiz_quadrada = cria_btn(janela,'√', 30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda: calcula_raiz_quadrada(), FLAT)
+cria_grid(raiz_quadrada,5 , 1 , 0 ,5,)
+
+porcentagem = cria_btn(janela,'%', 30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda: definir_operacao('%'), FLAT)
+cria_grid(porcentagem,5 , 2 , 0 ,5,2)
+
+ponto = cria_btn(janela,'.', 30 , 30 ,'#FFDB58',"#000000",'#FFA500',lambda: add_ponto(), FLAT)
+cria_grid(ponto,5 , 3 , 0 ,5,2)
 janela.mainloop()
